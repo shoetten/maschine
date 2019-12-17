@@ -21,7 +21,7 @@ domain (ip ip6) {
       proto tcp dport auth ACCEPT;
 
       # include custom rules
-      @include 'filter-input.d/';
+      @include 'ferm/filter-input.d/';
     }
 
     chain OUTPUT {
@@ -34,4 +34,4 @@ domain (ip ip6) {
   }
 }
 
-@include 'ferm.d/';
+@include 'ferm/ferm.d/';
