@@ -1,0 +1,11 @@
+---
+- name: Ensure python docker bindings are installed.
+  pip:
+    name: "{{ item.name | default(item) }}"
+    version: "{{ item.version | default(omit) }}"
+    state: "{{ item.state | default(omit) }}"
+    extra_args: --system
+  with_items:
+    - name: docker
+    - name: docker-compose
+  become: yes

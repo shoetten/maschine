@@ -1,0 +1,19 @@
+---
+# copy terminfo files
+- name: copy terminfo files
+  template:
+    src: "{{ item }}.j2"
+    dest: "/root/.{{ item }}"
+    mode: "0644"
+  with_items:
+    - terminfo.termite
+  become: yes
+
+# install terminfo files
+- name: install terminfo files
+  shell: tic -x /root/.{{ item }} && touch /root/.{{ item }}.imported
+  args:
+    creates: /root/.{{ item }}.imported
+  with_items:
+    - terminfo.termite
+  become: yes

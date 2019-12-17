@@ -1,0 +1,10 @@
+---
+# install packages for tools
+- name: install packages for tools
+  apt:
+    name:  "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - python-yaml
+  become: yes

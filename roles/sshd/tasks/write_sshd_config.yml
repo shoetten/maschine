@@ -1,0 +1,24 @@
+---
+# write sshd_config
+- name: write sshd_config
+  template:
+    src:  sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    mode: 0600
+  register: write_sshd_config
+  notify: restart sshd
+  become: yes
+
+# write port into local file (development only)
+- name: write port into local file (development only)
+  copy:
+    content: "{{ sshd_port }}"
+    dest: "{{ playbook_dir }}/../vagrant/{{ ansible_hostname }}.sshd_port.local"
+  when:
+    - stage == "development"
+    - write_sshd_config is succeeded
+  delegate_to: 127.0.0.1
+
+# force restart of sshd
+- name: force restart of sshd
+  meta: flush_handlers

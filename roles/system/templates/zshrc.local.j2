@@ -1,0 +1,64 @@
+SAVEHIST=10000
+
+### zsh plugins
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main pattern)
+ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
+
+### jumps via Alt/Strg + Left/Right/Backspace
+
+# default "*?_-.[]~=/&;!#$%^(){}<>"
+SUBWORDCHARS="*?.[]~=/&;!#$%^(){}<>"
+DIRWORDCHARS="*?._-[]~=&;!#$%^(){}<>"
+
+# Strg+Backspace
+backward-kill-dir () {
+    local WORDCHARS=$DIRWORDCHARS
+    zle backward-kill-word
+}
+zle -N backward-kill-dir
+bindkey '^H' backward-kill-dir
+
+# Strg+Left
+backward-word-dir () {
+    local WORDCHARS=$DIRWORDCHARS
+    zle backward-word
+}
+zle -N backward-word-dir
+bindkey "^[[1;5D" backward-word-dir
+
+# Strg+Right
+forward-word-dir () {
+    local WORDCHARS=$DIRWORDCHARS
+    zle forward-word
+}
+zle -N forward-word-dir
+bindkey "^[[1;5C" forward-word-dir
+
+# Alt+Backspace
+backward-kill-subword () {
+    local WORDCHARS=$SUBWORDCHARS
+    zle backward-kill-word
+}
+zle -N backward-kill-subword
+bindkey '^[^?' backward-kill-subword
+
+# Alt+Left
+backward-word-subword () {
+    local WORDCHARS=$SUBWORDCHARS
+    zle backward-word
+}
+zle -N backward-word-subword
+bindkey "^[[1;3D" backward-word-subword
+
+# Alt+Right
+forward-word-subword () {
+    local WORDCHARS=$SUBWORDCHARS
+    zle forward-word
+}
+zle -N forward-word-subword
+bindkey "^[[1;3C" forward-word-subword

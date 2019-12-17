@@ -1,0 +1,37 @@
+# {{ ansible_managed }}
+# manual customization of this file is not recommended
+
+domain (ip ip6) {
+  table filter {
+    chain INPUT {
+      policy {{ ferm_default_policy_input }};
+
+      # connection tracking
+      mod state state INVALID DROP;
+      mod state state (ESTABLISHED RELATED) ACCEPT;
+
+      # allow local connections
+      interface lo ACCEPT;
+
+      # allow ICMP protocol
+      # respond to ping
+      proto icmp icmp-type echo-request ACCEPT;
+      
+      # ident connections are also allowed
+      proto tcp dport auth ACCEPT;
+
+      # include custom rules
+      @include 'ferm/filter-input.d/';
+    }
+
+    chain OUTPUT {
+      policy {{ ferm_default_policy_output }};
+    }
+
+    chain FORWARD {
+      policy {{ ferm_default_policy_forward }};
+    }
+  }
+}
+
+@include 'ferm/ferm.d/';

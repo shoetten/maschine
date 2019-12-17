@@ -1,0 +1,33 @@
+Port {{ sshd_port }}
+AddressFamily {{ sshd_address_family }}
+ListenAddress {{ sshd_listen_address }}
+
+PubkeyAuthentication {{  sshd_pubkey_authentication  }}
+PasswordAuthentication {{ sshd_password_authentication }}
+ChallengeResponseAuthentication {{ sshd_challenge_response_authentication }}
+KerberosAuthentication {{ sshd_kerberos_authentication }}
+GSSAPIAuthentication {{ sshd_gssapi_authentication }}
+UsePAM {{ sshd_use_pam }}
+
+AllowAgentForwarding {{ sshd_allow_agent_forwarding }}
+AllowTcpForwarding {{ sshd_allow_tcp_forwarding }}
+X11Forwarding {{ sshd_x11_forwarding }}
+GatewayPorts {{ sshd_gateway_ports }}
+
+PermitRootLogin {{ sshd_permit_root_login }}
+PermitTunnel {{ sshd_permit_tunnel }}
+AcceptEnv {{ sshd_accept_env }}
+Subsystem {{ sshd_subsystem }}
+
+AllowUsers {{ admin_users | join(' ', attribute='name') }}
+
+MaxAuthTries {{ sshd_max_auth_tries }}
+MaxSessions {{ sshd_max_sessions }}
+
+UsePrivilegeSeparation {{ sshd_use_privilege_separation }}
+UseDNS {{ sshd_use_dns }}
+
+PrintMotd {{ sshd_print_motd }}
+PrintLastLog {{ sshd_print_last_log }}
+
+LogLevel {{ sshd_log_level }}

@@ -1,0 +1,39 @@
+---
+# system
+admin_users:
+  - name: simon
+    id: 1000
+    password: "{{ vault_admin_password }}"
+
+# firewall
+ferm_package_state: latest
+# additional config under the specific hosts
+
+packages:
+  - htop
+  - kdeconnect
+  - python-passlib
+  - python-pip
+  - python-setuptools
+  - tmux
+  - tree
+  - unzip
+  - tldr
+  - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+
+# firewall
+ferm_input_list:
+  - type: "dport_accept"
+    dport: ['1714:1764']
+    saddr: ["192.168.0.0/16"]
+    protocol: "(tcp udp)"
+    filename: "kde_connect_accept"
+  - type: "dport_accept"
+    dport: [80,3000]
+    saddr: ["192.168.0.0/16"]
+    filename: "local_dev_accept"
+  - type: "dport_accept"
+    dport: [mdns]
+    filename: "mdns_accept"

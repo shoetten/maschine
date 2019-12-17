@@ -1,0 +1,7 @@
+---
+# Define handlers that need to be run by multiple roles across hosts here.
+# Make sure to delegate to the correct server(s), where the handler should be run.
+
+# Reload NGINX
+- name: "reload nginx"
+  import_tasks: reload_nginx.yml

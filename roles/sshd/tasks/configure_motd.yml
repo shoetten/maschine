@@ -1,0 +1,31 @@
+---
+# delete standard motd files
+- name: delete standard motd files
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - /etc/update-motd.d/10-uname
+    - /etc/motd
+  become: yes
+
+# copy new motd files
+- name: copy new motd files
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    mode: "{{ item.mode }}"
+  with_items:
+    - src: motd.logo.j2
+      dest: /etc/motd.logo
+      mode: "0655"
+    - src: motd.quotes.{{ ansible_hostname }}.j2
+      dest: "/etc/motd.quotes.{{ ansible_hostname }}"
+      mode: "0655"
+    - src: 10-motd.j2
+      dest: /etc/update-motd.d/10-motd
+      mode: "0755"
+    - src: 20-stats.j2
+      dest: /etc/update-motd.d/20-stats
+      mode: "0755"
+  become: yes

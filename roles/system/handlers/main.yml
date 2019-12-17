@@ -1,0 +1,8 @@
+---
+# restart unbound
+- name: restart unbound
+  service:
+    name: unbound
+    state: restarted
+  become: yes
+  ignore_errors: yes

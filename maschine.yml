@@ -1,0 +1,6 @@
+---
+- name: provision maschine
+  hosts: localhost
+  roles:
+    - { role: common, tags: [ 'setup' ] }
+    # - { role: docker, tags: [ 'docker' ] }

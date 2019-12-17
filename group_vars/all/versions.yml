@@ -1,0 +1,4 @@
+---
+docker_compose_version: "1.24.1"
+
+zsh_autosuggestions_version: "v0.6.3"
