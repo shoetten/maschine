@@ -7,6 +7,11 @@
   with_items: "{{ admin_users }}"
   become: yes
 
+- name: add sudo group
+  group:
+    name: sudo
+  become: yes
+
 # add admin users
 - name: change root user
   user:
@@ -20,6 +25,8 @@
     group: "{{ item.name }}"
     groups:
       - sudo
+      - wheel
+      - audio
     shell: /bin/zsh
     password: "{{ item.password }}"
   with_items: "{{ admin_users }}"
@@ -51,7 +58,7 @@
     version: "{{ zsh_autosuggestions_version }}"
   become: yes
 
-# configure zsh 
+# configure zsh
 - name: configure root zsh
   template:
     src: zshrc.local.j2
