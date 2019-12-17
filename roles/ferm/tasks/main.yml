@@ -13,6 +13,12 @@
     state: present
   become: yes
 
+- name: remove default config file
+  file:
+    path: "/etc/ferm.conf"
+    state: absent
+  become: yes
+
 - name: ensure configuration directories exist
   file:
     path: "{{ item }}"
@@ -65,13 +71,13 @@
   become: yes
 
 - name: ensure iptables rules are enabled
-  command: ferm --slow /etc/ferm.conf
+  command: ferm --slow /etc/ferm/ferm.conf
   changed_when: false
   when: ferm_enabled
   become: yes
 
 - name: ensure iptables rules are disabled
-  command: ferm --flush /etc/ferm.conf
+  command: ferm --flush /etc/ferm/ferm.conf
   changed_when: false
   when: not ferm_enabled
   become: yes

@@ -16,12 +16,12 @@ domain (ip ip6) {
       # allow ICMP protocol
       # respond to ping
       proto icmp icmp-type echo-request ACCEPT;
-      
+
       # ident connections are also allowed
       proto tcp dport auth ACCEPT;
 
       # include custom rules
-      @include 'ferm/filter-input.d/';
+      @include 'filter-input.d/';
     }
 
     chain OUTPUT {
@@ -34,4 +34,4 @@ domain (ip ip6) {
   }
 }
 
-@include 'ferm/ferm.d/';
+@include 'ferm.d/';
