@@ -29,7 +29,7 @@
     dest: /{{ item }}
   with_items:
     - etc/default/ferm
-    - etc/ferm.conf
+    - etc/ferm/ferm.conf
   notify:
     - restart ferm
   become: yes
