@@ -11,14 +11,15 @@ ferm_package_state: latest
 
 packages:
   - htop
+  - inetutils
   - kdeconnect
   - python-passlib
   - python-pip
   - python-setuptools
+  - tldr
   - tmux
   - tree
   - unzip
-  - tldr
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
