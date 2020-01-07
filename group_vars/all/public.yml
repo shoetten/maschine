@@ -51,6 +51,7 @@ applications:
   - scribus
   - veracrypt
   - vlc
+  - juk
   - zeal
   - skanlite
 
