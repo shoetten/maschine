@@ -24,3 +24,21 @@
     name: paccache.timer
     state: started
     enabled: yes
+
+# AUR
+- name: Create AUR directory
+  file:
+    path: "/home/{{ user.name }}/{{ aur.dir }}"
+    state: directory
+    owner: "{{ user.name }}"
+    group: "{{ user.group }}"
+  tags:
+    - aur
+
+- name: Install AUR base packages
+  aur:
+    name: "{{ aur.packages }}"
+    user: "{{ user.name }}"
+    dir: "/home/{{ user.name }}/{{ aur.dir }}"
+  tags:
+    - aur

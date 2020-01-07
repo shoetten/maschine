@@ -41,6 +41,11 @@ base_packages:
   - zsh-syntax-highlighting
   - grml-zsh-config
 
+aur:
+  dir: .aur
+  packages:
+    - yay
+
 applications:
   - libreoffice-fresh
   - librecad
