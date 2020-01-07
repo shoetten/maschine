@@ -5,7 +5,6 @@
     name: "{{ base_packages }}"
     update_cache: yes
     state: present
-  become: yes
 
 # install applications
 - name: install applications
@@ -13,4 +12,15 @@
     name: "{{ applications }}"
     update_cache: yes
     state: present
-  become: yes
+
+- name: install pacman-contrib
+  pacman:
+    name: pacman-contrib
+    update_cache: yes
+    state: present
+
+- name: Enable and start pacman cache cleanup timer
+  service:
+    name: paccache.timer
+    state: started
+    enabled: yes
