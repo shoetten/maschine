@@ -37,12 +37,10 @@ base_packages:
 applications:
   - libreoffice-fresh
   - librecad
-  - mediathek
   - nextcloud-client
   - mixxx
   - pdfarranger
   - pdfmixtool
-  - hibiscus
   - gimp
   - inkscape
   - firefox
