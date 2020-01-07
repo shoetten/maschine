@@ -9,22 +9,52 @@ admin_users:
 ferm_package_state: latest
 # additional config under the specific hosts
 
-packages:
+base_packages:
+  - ansible
+  - bluez
+  - fwupd
+  - git
   - htop
   - inetutils
-  - kdeconnect
+  - intel-ucode
+  - nmap
   - python-passlib
   - python-pip
   - python-setuptools
+  - restic
   - tldr
   - tmux
   - tree
   - unzip
+  - vim
+  - vulkan-intel
+  - vulkan-mesa-layer
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
   - grml-zsh-config
 
+applications:
+  - libreoffice-fresh
+  - librecad
+  - mediathek
+  - nextcloud-client
+  - mixxx
+  - pdfarranger
+  - pdfmixtool
+  - hibiscus
+  - gimp
+  - inkscape
+  - firefox
+  - firefox-developer-edition
+  - chromium
+  - code
+  - riot-desktop
+  - scribus
+  - veracrypt
+  - vlc
+  - zeal
+  - skanlite
 
 # firewall
 ferm_input_list:
