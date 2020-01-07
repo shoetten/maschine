@@ -5,4 +5,5 @@
     name: "{{ plasma_packages }}"
     update_cache: yes
     state: present
-  become: yes
+  notify:
+    - enable sddm

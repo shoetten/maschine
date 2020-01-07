@@ -2,5 +2,4 @@
 - name: enable sddm
   service:
     name:  sddm
-    state: enabled
-  become: yes
+    enabled: yes
