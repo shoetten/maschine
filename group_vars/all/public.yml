@@ -2,8 +2,8 @@
 # system
 user:
   name: simon
-    id: 1000
-    password: "{{ vault_admin_password }}"
+  id: 1000
+  password: "{{ vault_admin_password }}"
 
 # firewall
 ferm_package_state: latest
@@ -11,6 +11,8 @@ ferm_package_state: latest
 
 base_packages:
   - ansible
+  - arch-wiki-docs
+  - arch-wiki-lite
   - bluez
   - fwupd
   - git
@@ -18,15 +20,20 @@ base_packages:
   - inetutils
   - intel-ucode
   - nmap
+  - python-keyring
   - python-passlib
   - python-pip
+  - python-secretstorage
   - python-setuptools
   - restic
+  - ruby
+  - smartmontools
   - tldr
   - tmux
   - tree
   - unzip
   - vim
+  - libva-intel-driver
   - vulkan-intel
   - vulkan-mesa-layer
   - zsh
