@@ -1,0 +1,10 @@
+---
+# install packages
+- name: install packages
+  pacman:
+    name: "sddm"
+    update_cache: yes
+    state: present
+  notify:
+    - enable sddm
+  become: yes

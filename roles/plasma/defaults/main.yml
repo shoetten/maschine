@@ -1,0 +1,26 @@
+---
+plasma_packages:
+  - xf86-video-intel
+  - mesa
+  - xorg-server
+  - plasma-desktop
+  - plasma-wayland-session
+  - plasma-meta
+  - pulseaudio-bluetooth
+  - kdeplasma-addons
+  - kde-gtk-config
+  - breeze-grub
+
+kde_applications:
+  - okular
+  - dolphin
+  - filelight
+  - gwenview
+  - kdepim-meta
+  - kaccounts-providers
+  - kate
+  - kcalc
+  - konsole
+  - sweeper
+  - kdeconnect
+

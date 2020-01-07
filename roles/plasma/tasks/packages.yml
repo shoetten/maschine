@@ -1,0 +1,8 @@
+---
+# install packages
+- name: install packages
+  pacman:
+    name: "{{ plasma_packages }}"
+    update_cache: yes
+    state: present
+  become: yes
