@@ -32,32 +32,6 @@
   with_items: "{{ admin_users }}"
   become: yes
 
-# add grml
-- name: add root grml zsh config
-  get_url:
-    url: https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
-    dest: /root/.zshrc
-    owner: root
-    group: root
-  become: yes
-
-- name: add admin grml zsh config
-  get_url:
-    url: https://git.grml.org/f/grml-etc-core/etc/zsh/zshrc
-    dest: /home/{{ item.name }}/.zshrc
-    owner: "{{ item.name }}"
-    group: "{{ item.name }}"
-  with_items: "{{ admin_users }}"
-  become: yes
-
-# clone zsh autosuggestions
-- name: clone zsh autosuggestions repository
-  git:
-    repo: https://github.com/zsh-users/zsh-autosuggestions
-    dest: /usr/share/zsh-autosuggestions
-    version: "{{ zsh_autosuggestions_version }}"
-  become: yes
-
 # configure zsh
 - name: configure root zsh
   template:

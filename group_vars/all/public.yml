@@ -23,6 +23,8 @@ packages:
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
+  - grml-zsh-config
+
 
 # firewall
 ferm_input_list:
