@@ -1,7 +1,7 @@
 ---
 # system
-admin_users:
-  - name: simon
+user:
+  name: simon
     id: 1000
     password: "{{ vault_admin_password }}"
 

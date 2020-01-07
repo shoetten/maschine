@@ -19,7 +19,7 @@ PermitTunnel {{ sshd_permit_tunnel }}
 AcceptEnv {{ sshd_accept_env }}
 Subsystem {{ sshd_subsystem }}
 
-AllowUsers {{ admin_users | join(' ', attribute='name') }}
+AllowUsers {{ user.name }}
 
 MaxAuthTries {{ sshd_max_auth_tries }}
 MaxSessions {{ sshd_max_sessions }}

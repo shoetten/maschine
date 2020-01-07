@@ -2,50 +2,42 @@
 # add admin groups
 - name: add admin groups
   group:
-    name: "{{ item.name }}"
-    gid: "{{ item.id }}"
-  with_items: "{{ admin_users }}"
-  become: yes
+    name: "{{ user.name }}"
+    gid: "{{ user.id }}"
 
 - name: add sudo group
   group:
     name: sudo
-  become: yes
 
 # add admin users
 - name: change root user
   user:
     name: root
     shell: /bin/zsh
-  become: yes
 
 - name: add admin users
   user:
-    name: "{{ item.name }}"
-    group: "{{ item.name }}"
+    name: "{{ user.name }}"
+    group: "{{ user.name }}"
     groups:
       - sudo
       - wheel
       - audio
+      - video
     shell: /bin/zsh
-    password: "{{ item.password }}"
-  with_items: "{{ admin_users }}"
-  become: yes
+    password: "{{ user.password }}"
 
 # configure zsh
 - name: configure root zsh
   template:
-    src: zshrc.local.j2
+    src: zshrc.j2
     dest: /root/.zshrc.local
     owner: root
     group: root
-  become: yes
 
 - name: configure admin zsh
   template:
-    src: zshrc.local.j2
-    dest: "/home/{{ item.name }}/.zshrc.local"
-    owner: "{{ item.name }}"
-    group: "{{ item.name }}"
-  with_items: "{{ admin_users }}"
-  become: yes
+    src: zshrc.j2
+    dest: "/home/{{ user.name }}/.zshrc"
+    owner: "{{ user.name }}"
+    group: "{{ user.name }}"
