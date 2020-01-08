@@ -25,6 +25,12 @@
     state: started
     enabled: yes
 
+- name: Enable color output in pacman
+  lineinfile:
+    path: /etc/pacman.conf
+    regexp: '^#?Color'
+    line: "Color"
+
 # AUR
 - name: Create AUR directory
   file:
