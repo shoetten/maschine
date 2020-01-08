@@ -3,7 +3,6 @@
 user:
   name: simon
   id: 1000
-  password: "{{ vault_admin_password }}"
 
 # firewall
 ferm_package_state: latest

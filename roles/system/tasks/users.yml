@@ -25,7 +25,8 @@
       - audio
       - video
     shell: /bin/zsh
-    password: "{{ user.password }}"
+    password: "{{ user_password | password_hash('sha512') }}"
+    update_password: on_create
 
 # configure zsh
 - name: configure root zsh

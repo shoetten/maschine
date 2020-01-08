@@ -5,3 +5,6 @@
     - { role: common, tags: [ 'setup' ] }
     - { role: plasma, tags: [ 'window-manager' ] }
     # - { role: docker, tags: [ 'docker' ] }
+  vars_prompt:
+    - name: user_password
+      prompt: "Enter desired user password"
