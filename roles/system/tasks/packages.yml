@@ -31,7 +31,7 @@
     path: "/home/{{ user.name }}/{{ aur.dir }}"
     state: directory
     owner: "{{ user.name }}"
-    group: "{{ user.group }}"
+    group: "{{ user.name }}"
   tags:
     - aur
 
