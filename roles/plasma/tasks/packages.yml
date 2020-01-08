@@ -7,3 +7,9 @@
     state: present
   notify:
     - enable sddm
+
+- name: install kde applications
+  pacman:
+    name: "{{ kde_applications }}"
+    update_cache: yes
+    state: present
