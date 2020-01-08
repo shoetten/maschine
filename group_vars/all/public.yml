@@ -13,6 +13,7 @@ base_packages:
   - ansible
   - arch-wiki-docs
   - arch-wiki-lite
+  - base-devel
   - bluez
   - fwupd
   - git
