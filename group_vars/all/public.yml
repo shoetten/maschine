@@ -57,6 +57,7 @@ applications:
   - inkscape
   - firefox
   - firefox-developer-edition
+  - keepassxc
   - chromium
   - code
   - riot-desktop
