@@ -12,14 +12,14 @@ plasma_packages:
   - breeze-grub
 
 kde_applications:
-  - okular
   - dolphin
   - filelight
   - gwenview
-  - kdepim-meta
   - kaccounts-providers
   - kate
   - kcalc
-  - konsole
-  - sweeper
   - kdeconnect
+  - kdepim-meta
+  - kdeutils-meta
+  - konsole
+  - okular
