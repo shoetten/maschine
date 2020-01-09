@@ -5,6 +5,28 @@ ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
+# Shorten prompt path
+zstyle ':prompt:grml:left:items:path' token '%25<..<%~%<< '
+
+# Aliase
+alias be="bundle exec"
+alias dc="sudo docker-compose"
+
+dcl() {
+        if [ -n "$1" ]
+        then
+                sudo docker-compose logs -f "$1"
+        else
+                sudo docker-compose logs -f app
+        fi
+}
+
+# Git Workflows
+export PATH="$PATH:$HOME/Development/tools/gitworkflows"
+alias git-autoremove-local-branches="git fetch --prune && git branch -vv | grep 'origin/.*: entfernt]' | awk '{print $1}' | xargs git branch -D"
+
+# Local bin directory
+export PATH="$HOME/.local/bin:$PATH"
 
 ### jumps via Alt/Strg + Left/Right/Backspace
 
