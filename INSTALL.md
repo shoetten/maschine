@@ -6,7 +6,7 @@ It uses efi and systemd boot and makes many assumptions (german keyboard & timez
 
 ## Preparations
 
-- Flash a recent archiso to an usb drive and boot it.
+- Flash a recent archiso to an usb drive, verify and boot it.
 
 - Load german keyboard layout
 
@@ -261,6 +261,8 @@ $ ping archlinux.org
 - Update the whole system `pacman -Syu`
 
 - Install Ansible and git `pacman -Sy ansible git`
+
+- Run the playbook :)
 
 ## SSH
 
