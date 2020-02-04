@@ -4,6 +4,7 @@
   roles:
     - { role: common, tags: [ 'setup' ] }
     - { role: plasma, tags: [ 'window-manager' ] }
+    - { role: ssd, tags: [ 'ssd' ] }
     # - { role: docker, tags: [ 'docker' ] }
   vars_prompt:
     - name: user_password
