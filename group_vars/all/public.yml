@@ -43,6 +43,7 @@ aur:
   packages:
     - yay
     - rbenv
+    - nvm
 
 applications:
   - libreoffice-fresh
