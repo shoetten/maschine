@@ -4,10 +4,6 @@ user:
   name: simon
   id: 1000
 
-# firewall
-ferm_package_state: latest
-# additional config under the specific hosts
-
 base_packages:
   - ansible
   - arch-wiki-docs

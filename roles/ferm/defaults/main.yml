@@ -1,5 +1,6 @@
 ---
 ferm_package: ferm
+ferm_package_state: latest
 
 ferm_enabled: true
 ferm_limit_portscans: false
