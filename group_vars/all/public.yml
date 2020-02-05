@@ -42,6 +42,7 @@ aur:
   dir: .aur
   packages:
     - yay
+    - rbenv
 
 applications:
   - libreoffice-fresh
