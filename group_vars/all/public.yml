@@ -9,6 +9,7 @@ base_packages:
   - arch-wiki-docs
   - arch-wiki-lite
   - base-devel
+  - bolt
   - bluez
   - fwupd
   - git

@@ -5,6 +5,7 @@ plasma_packages:
   - xorg-server
   - plasma-desktop
   - plasma-wayland-session
+  - plasma-thunderbolt
   - plasma-meta
   - pulseaudio-bluetooth
   - kdeplasma-addons
