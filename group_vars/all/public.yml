@@ -48,6 +48,9 @@ aur:
 
 applications:
   - libreoffice-fresh
+  - libreoffice-fresh-de
+  - hunspell-de
+  - hyphen-de
   - librecad
   - nextcloud-client
   - mixxx
