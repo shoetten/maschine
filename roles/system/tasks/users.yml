@@ -27,18 +27,3 @@
     shell: /bin/zsh
     password: "{{ user_password | password_hash('sha512') }}"
     update_password: on_create
-
-# configure zsh
-- name: configure root zsh
-  template:
-    src: zshrc.j2
-    dest: /root/.zshrc.local
-    owner: root
-    group: root
-
-- name: configure admin zsh
-  template:
-    src: zshrc.j2
-    dest: "/home/{{ user.name }}/.zshrc"
-    owner: "{{ user.name }}"
-    group: "{{ user.name }}"

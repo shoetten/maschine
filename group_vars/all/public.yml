@@ -24,6 +24,7 @@ base_packages:
   - python-setuptools
   - restic
   - ruby
+  - ruby-bundler
   - smartmontools
   - tldr
   - tmux
@@ -44,7 +45,6 @@ aur:
   packages:
     - yay
     - rbenv
-    - nvm
 
 applications:
   - libreoffice-fresh
@@ -70,6 +70,9 @@ applications:
   - juk
   - zeal
   - skanlite
+
+# zsh
+zsh_config_path: ".zsh"
 
 # firewall
 ferm_input_list:

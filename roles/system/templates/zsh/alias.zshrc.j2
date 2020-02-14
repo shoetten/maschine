@@ -1,0 +1,14 @@
+# Bundler
+alias be="bundle exec"
+
+# Docker
+alias dc="sudo docker-compose"
+
+dcl() {
+        if [ -n "$1" ]
+        then
+                sudo docker-compose logs -f "$1"
+        else
+                sudo docker-compose logs -f app
+        fi
+}

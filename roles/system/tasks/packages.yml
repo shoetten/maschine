@@ -10,13 +10,11 @@
 - name: install applications
   pacman:
     name: "{{ applications }}"
-    update_cache: yes
     state: present
 
 - name: install pacman-contrib
   pacman:
     name: pacman-contrib
-    update_cache: yes
     state: present
 
 - name: Enable and start pacman cache cleanup timer

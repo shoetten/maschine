@@ -19,6 +19,12 @@ provided on the first run when the user is being created. On later runs,
 providing any password -- whether the current user password or a new one --
 will have no effect.
 
+## ZSH
+
+ZSH will be set as the default shell for all users, including root. The grml config is used.
+
+If you wish to add to your `.zshrc` config, add a file under `~/.zsh`, because the default `.zshrc` will be overwritten with the next ansible run.
+
 ## Special Backup Directories
 
 - KMail
