@@ -54,6 +54,7 @@ applications:
   - librecad
   - nextcloud-client
   - mixxx
+  - mumble
   - pdfarranger
   - pdfmixtool
   - gimp
