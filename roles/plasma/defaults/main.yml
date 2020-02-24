@@ -11,6 +11,7 @@ plasma_packages:
   - kdeplasma-addons
   - kde-gtk-config
   - breeze-grub
+  - xdg-desktop-portal-kde
 
 kde_applications:
   - dolphin

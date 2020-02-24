@@ -39,6 +39,7 @@ base_packages:
   - zsh-autosuggestions
   - zsh-syntax-highlighting
   - grml-zsh-config
+  - xdg-desktop-portal
 
 aur:
   dir: .aur
