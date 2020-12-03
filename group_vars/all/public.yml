@@ -50,6 +50,7 @@ aur:
 applications:
   - libreoffice-fresh
   - libreoffice-fresh-de
+  - hunspell-en_US
   - hunspell-de
   - hyphen-de
   - librecad
