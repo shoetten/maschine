@@ -268,10 +268,10 @@ $ ping archlinux.org
 
 ### Create SSH keys
 
-Install openssh. Then create a new key for each service with:
+Install openssh. Then create a new key for each organization / concern with:
 
 ```
-ssh-keygen -t rsa -b 4096 -C "EMAIL@ADDRESS"
+ssh-keygen -a 100 -t ed25519 -f ~/.ssh/CONCERN -C "EMAIL@ADDRESS"
 ```
 
 Optionally add the keys to your KeePassXC database.
