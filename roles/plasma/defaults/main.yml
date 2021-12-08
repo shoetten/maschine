@@ -1,17 +1,19 @@
 ---
 plasma_packages:
-  - xf86-video-intel
-  - mesa
-  - xorg-server
-  - plasma-desktop
-  - plasma-wayland-session
-  - plasma-thunderbolt
-  - plasma-meta
-  - pulseaudio-bluetooth
-  - kdeplasma-addons
-  - kde-gtk-config
   - breeze-grub
+  - jhead
+  - kde-gtk-config
+  - kdeplasma-addons
+  - mesa
+  - plasma-desktop
+  - plasma-meta
+  - plasma-thunderbolt
+  - plasma-wayland-session
+  - pulseaudio-bluetooth
+  - qt5-imageformats
   - xdg-desktop-portal-kde
+  - xf86-video-intel
+  - xorg-server
 
 kde_applications:
   - dolphin
@@ -25,3 +27,9 @@ kde_applications:
   - kdeutils-meta
   - konsole
   - okular
+
+plasma_aur:
+  aur:
+    dir: .aur
+    packages:
+      - kde-service-menu-reimage

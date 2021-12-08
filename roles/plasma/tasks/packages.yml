@@ -13,3 +13,9 @@
     name: "{{ kde_applications }}"
     update_cache: yes
     state: present
+
+- name: Install AUR addon packages
+  aur:
+    name: "{{ plasma_aur.packages }}"
+    user: "{{ user.name }}"
+    dir: "/home/{{ user.name }}/{{ plasma_aur.dir }}"
