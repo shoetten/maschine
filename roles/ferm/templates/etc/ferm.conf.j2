@@ -17,6 +17,9 @@ domain (ip ip6) {
       # respond to ping
       proto icmp icmp-type echo-request ACCEPT;
 
+      # allow ICMP on IPv6 (for neighbor solicitation, like ARP for IPv4)
+      proto ipv6-icmp ACCEPT;
+
       # ident connections are also allowed
       proto tcp dport auth ACCEPT;
 
