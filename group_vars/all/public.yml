@@ -17,6 +17,9 @@ base_packages:
   - inetutils
   - intel-ucode
   - nmap
+  - pipewire-pulse
+  - wireplumber # pipewire session manager
+  - easyeffects # Audio Effects for Pipewire applications
   - python-keyring
   - python-passlib
   - python-pip
