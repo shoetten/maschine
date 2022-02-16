@@ -80,14 +80,18 @@ zsh_config_path: ".zsh"
 # firewall
 ferm_input_list:
   - type: "dport_accept"
-    dport: ['1714:1764']
-    saddr: ["192.168.0.0/16"]
-    protocol: "(tcp udp)"
     filename: "kde_connect_accept"
+    dport: ['1714:1764']
+    saddr:
+      - "192.168.0.0/16"
+      - "10.88.0.0/16"
+    protocol: "(tcp udp)"
   - type: "dport_accept"
-    dport: [80,3000]
-    saddr: ["192.168.0.0/16"]
     filename: "local_dev_accept"
+    dport: [80,3000]
+    saddr:
+      - "192.168.0.0/16"
+      - "10.88.0.0/16"
   - type: "dport_accept"
     dport: [mdns]
     filename: "mdns_accept"
