@@ -9,7 +9,6 @@ plasma_packages:
   - plasma-meta
   - plasma-thunderbolt
   - plasma-wayland-session
-  - pulseaudio-bluetooth
   - qt5-imageformats
   - xdg-desktop-portal-kde
   - xf86-video-intel

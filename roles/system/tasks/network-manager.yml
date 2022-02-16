@@ -1,0 +1,6 @@
+- name: copy network manager config files
+  template:
+    src: "{{ item }}"
+    dest: "/etc/NetworkManager/conf.d/{{ item | basename | regex_replace('\\.j2$', '') }}"
+  with_fileglob: "../templates/NetworkManager/conf.d/*.j2"
+  become: True
