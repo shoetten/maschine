@@ -6,7 +6,7 @@ notify-send "Restic backup started."
 
 echo "Creating incremental backup ..."
 ### Backup new stuff
-restic backup \
+sudo -u restic restic backup \
 --verbose \
 --files-from /home/{{ backup_user_name }}/.config/restic/backup.files \
 --exclude-caches \

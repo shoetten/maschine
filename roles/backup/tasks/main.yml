@@ -6,6 +6,32 @@
     state: present
   become: True
 
+- name: add dedicated restic group
+  group:
+    name: restic
+  become: True
+
+- name: add dedicated restic user
+  user:
+    name: restic
+    group: restic
+    shell: /sbin/nologin
+  become: True
+
+- name: change restic binary permissions, so regular users can't execute it
+  file:
+    path: /usr/bin/restic
+    owner: root
+    group: restic
+    mode: 0750
+  become: True
+
+- name: allow restic binary to read everything
+  capabilities:
+    path: /usr/bin/restic
+    capability: cap_dac_read_search=+ep
+    state: present
+
 - name: add backup binary
   template:
     src: ".local/bin/backup.j2"
