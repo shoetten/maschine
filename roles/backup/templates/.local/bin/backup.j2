@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e
+
+export RESTIC_REPOSITORY="{{ backup_restic_repository }}"
+notify-send "Restic backup started."
+
+echo "Creating incremental backup ..."
+### Backup new stuff
+restic backup \
+--verbose \
+--files-from /home/{{ backup_user_name }}/.config/restic/backup.files \
+--exclude-caches \
+--exclude-file /home/{{ backup_user_name }}/.config/restic/exclude.files
+
+### Remove old stuff
+echo "Deleting old backups ..."
+restic forget \
+--keep-last 7 \
+--keep-daily 7 \
+--keep-weekly 3 \
+--keep-monthly 6
+
+# restic -r $BACKARCH check
+echo "Don't forget to run \"restic check\" from time to time"
+echo "Backup finished."
+
+notify-send "Restic backup finished."

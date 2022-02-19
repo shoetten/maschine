@@ -1,0 +1,22 @@
+---
+- name: install restic
+  pacman:
+    name: restic
+    update_cache: True
+    state: present
+  become: True
+
+- name: add backup binary
+  template:
+    src: ".local/bin/backup.j2"
+    dest: "/home/{{ backup_user_name }}/.local/bin/backup"
+    mode: 0750
+
+- name: add backup configs
+  template:
+    src: "{{ item }}.j2"
+    dest: "/home/{{ backup_user_name }}/{{ item }}"
+    mode: 0640
+  with_items:
+    - .config/restic/backup.files
+    - .config/restic/exclude.files
