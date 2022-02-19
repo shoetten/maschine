@@ -1,7 +1,7 @@
 ---
 
 - name: ensure user service directory exist
-  file:
+  ansible.builtin.file:
     path: "/home/{{ system_user.name }}/.config/systemd/user"
     state: directory
     mode: 0755
@@ -9,7 +9,7 @@
   become_user: "{{ system_user.name }}"
 
 - name: add user service for ssh-agent
-  copy:
+  ansible.builtin.copy:
     src: "{{ item }}"
     dest: "/home/{{ system_user.name }}/{{ item }}"
   with_items:
@@ -18,7 +18,7 @@
   become_user: "{{ system_user.name }}"
 
 - name: enable ssh-agent service
-  systemd:
+  ansible.builtin.systemd:
     name: ssh-agent
     state: started
     enabled: yes
@@ -27,7 +27,7 @@
   become_user: "{{ system_user.name }}"
 
 - name: export ssh auth socket env
-  copy:
+  ansible.builtin.copy:
     src: etc/profile.d/ssh-agent.sh
     dest: /etc/profile.d/ssh-agent.sh
     mode: '0644'

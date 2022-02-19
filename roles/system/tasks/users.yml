@@ -1,22 +1,22 @@
 ---
 # add admin groups
 - name: add admin groups
-  group:
+  ansible.builtin.group:
     name: "{{ system_user.name }}"
     gid: "{{ system_user.id }}"
 
 - name: add sudo group
-  group:
+  ansible.builtin.group:
     name: sudo
 
 # add admin users
 - name: change root user
-  user:
+  ansible.builtin.user:
     name: root
     shell: /bin/zsh
 
 - name: add admin users
-  user:
+  ansible.builtin.user:
     name: "{{ system_user.name }}"
     group: "{{ system_user.name }}"
     groups:

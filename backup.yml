@@ -1,0 +1,9 @@
+---
+- name: setup backup via restic
+  hosts: localhost
+  tags:
+    - backup
+  roles:
+    - role: backup
+      backup_restic_repository: "{{ local_backup_restic_repository }}"
+      backup_user_name: "{{ user_name }}"

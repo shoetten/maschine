@@ -1,35 +1,35 @@
 ---
 # configure zsh
 - name: Configure root zsh
-  template:
+  ansible.builtin.template:
     src: zshrc.j2
     dest: /root/.zshrc
     owner: root
     group: root
 
 - name: Configure user zsh
-  template:
+  ansible.builtin.template:
     src: zshrc.j2
     dest: "/home/{{ system_user.name }}/.zshrc"
     owner: "{{ system_user.name }}"
     group: "{{ system_user.name }}"
 
 - name: Ensure zsh root config directory exists
-  file:
+  ansible.builtin.file:
     path: "/root/{{ system_zsh_config_path }}"
     state: directory
     owner: root
     group: root
 
 - name: Ensure zsh user config directory exists
-  file:
+  ansible.builtin.file:
     path: "/home/{{ system_user.name }}/{{ system_zsh_config_path }}"
     state: directory
     owner: "{{ system_user.name }}"
     group: "{{ system_user.name }}"
 
 - name: Copy all zsh root config template files
-  template:
+  ansible.builtin.template:
     src: "{{ item }}"
     dest: "/root/{{ system_zsh_config_path }}/{{ item | basename | regex_replace('\\.j2$', '') }}"
     owner: root
@@ -37,7 +37,7 @@
   with_fileglob: "../templates/zsh/*.j2"
 
 - name: Copy all zsh user config template files
-  template:
+  ansible.builtin.template:
     src: "{{ item }}"
     dest: "/home/{{ system_user.name }}/{{ system_zsh_config_path }}/{{ item | basename | regex_replace('\\.j2$', '') }}"
     owner: "{{ system_user.name }}"

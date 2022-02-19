@@ -1,7 +1,7 @@
 ---
 # write sshd_config
 - name: write sshd_config
-  template:
+  ansible.builtin.template:
     src:  sshd_config.j2
     dest: /etc/ssh/sshd_config
     mode: 0600
@@ -11,7 +11,7 @@
 
 # write port into local file (development only)
 - name: write port into local file (development only)
-  copy:
+  ansible.builtin.copy:
     content: "{{ sshd_port }}"
     dest: "{{ playbook_dir }}/../vagrant/{{ ansible_hostname }}.sshd_port.local"
   when:

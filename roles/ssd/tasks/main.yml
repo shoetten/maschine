@@ -1,20 +1,22 @@
 ---
 - name: Install hdparm
-  pacman: name=hdparm state=present
+  community.general.pacman:
+    name: hdparm
+    state: present
 
 - name: Check for TRIM support
-  shell: "hdparm -I {{ disk_name }} | grep TRIM"
+  ansible.builtin.shell: "hdparm -I {{ disk_name }} | grep TRIM"
   register: hdparm
   ignore_errors: True
 
 - name: Enable trim support in LVM
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/lvm/lvm.conf
     regexp: '^\s*issue_discards ='
     line: " issue_discards = 1"
 
 - name: Enable and start weekly filesystem TRIM timer
-  service:
+  ansible.builtin.service:
     name: fstrim.timer
     enabled: yes
     state: started

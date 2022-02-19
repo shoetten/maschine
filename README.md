@@ -1,8 +1,9 @@
 Maschine Local Provisioning
 ===========================
 
-My personal workstation playbook. Provisions an Arch Linux installation with a KDE Plasma desktop.
-It's supposed to be used after the [Arch Installtion Guide](INSTALL.md) is completed, you have setup a working internet connection and have installed `ansible` & `git`.
+My personal workstation playbook. Provisions an Arch Linux installation with a KDE Plasma desktop. Mainly used so i don't forget how i configured my machine ;)
+
+It's supposed to be used after the [Arch Installation Guide](INSTALL.md) is completed, you have setup a working internet connection and have installed `ansible` & `git`.
 
 ## Running
 
@@ -14,16 +15,14 @@ Then run the playbook as root.
 
     # ansible-playbook maschine.yml
 
-When run, Ansible will prompt for the user password. This only needs to be
-provided on the first run when the user is being created. On later runs,
-providing any password -- whether the current user password or a new one --
-will have no effect.
+When run, Ansible will prompt for the user password. This only needs to be provided on the first run, when the user is being created.
+On later runs, providing any password -- whether it is the current user password or a new one -- will have no effect.
 
-## ZSH
+## Shell
 
 ZSH will be set as the default shell for all users, including root. The grml config is used.
 
-If you wish to add to your `.zshrc` config, add a file under `~/.zsh`, because the default `.zshrc` will be overwritten with the next ansible run.
+If you wish to add to your `.zshrc` config, add a file under `~/.zsh`, because the default `.zshrc` will be overwritten on the next Ansible run.
 
 ## Special Backup Directories
 

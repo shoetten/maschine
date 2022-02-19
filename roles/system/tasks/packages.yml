@@ -1,43 +1,43 @@
 ---
 # install packages
 - name: install base packages
-  pacman:
+  community.general.pacman:
     name: "{{ system_base_packages }}"
     update_cache: yes
     state: present
 
 - name: install development packages
-  pacman:
+  community.general.pacman:
     name: "{{ system_development_packages }}"
     update_cache: yes
     state: present
 
 # install applications
 - name: install applications
-  pacman:
+  community.general.pacman:
     name: "{{ system_applications }}"
     state: present
 
 - name: install pacman-contrib
-  pacman:
+  community.general.pacman:
     name: pacman-contrib
     state: present
 
 - name: Enable and start pacman cache cleanup timer
-  service:
+  ansible.builtin.service:
     name: paccache.timer
     state: started
     enabled: yes
 
 - name: Enable color output in pacman
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/pacman.conf
     regexp: '^#?Color'
     line: "Color"
 
 # AUR
 - name: Create AUR directory
-  file:
+  ansible.builtin.file:
     path: "/home/{{ system_user.name }}/{{ system_aur.dir }}"
     state: directory
     owner: "{{ system_user.name }}"

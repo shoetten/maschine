@@ -1,6 +1,6 @@
 ---
 - name: restart ferm
-  service:
+  ansible.builtin.service:
     name: ferm
     state: restarted
   when: ferm_enabled

@@ -26,14 +26,9 @@
       tags:
         - ssd
 
-    - role: backup
-      tags:
-        - backup
-      backup_restic_repository: "{{ local_backup_restic_repository }}"
-      backup_user_name: "{{ user_name }}"
-
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"
 
 - import_playbook: firewall.yml
+- import_playbook: backup.yml

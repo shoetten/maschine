@@ -1,7 +1,7 @@
 ---
 # install packages
 - name: install packages
-  pacman:
+  community.general.pacman:
     name: "sddm"
     update_cache: yes
     state: present
@@ -10,4 +10,4 @@
 
 # set german keymap
 - name: set german keymap for sddm
-  command: localectl set-x11-keymap de
+  ansible.builtin.command: localectl set-x11-keymap de

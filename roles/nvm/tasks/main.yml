@@ -8,7 +8,7 @@
     - aur
 
 - name: add nvm to zsh config
-  template:
+  ansible.builtin.template:
     src: nvm.zshrc.j2
     dest: "/home/{{ nvm_user_name }}/{{ nvm_zsh_config_path }}/nvm.zshrc"
     owner: "{{ nvm_user_name }}"
