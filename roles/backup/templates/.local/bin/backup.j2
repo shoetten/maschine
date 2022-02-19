@@ -4,13 +4,20 @@ set -e
 export RESTIC_REPOSITORY="{{ backup_restic_repository }}"
 notify-send "Restic backup started."
 
+### Give restic user permissions to connect to ssh auth socket
+setfacl -m restic:x $(dirname "$SSH_AUTH_SOCK")
+setfacl -m restic:rwx "$SSH_AUTH_SOCK"
+
 echo "Creating incremental backup ..."
 ### Backup new stuff
-sudo -u restic restic backup \
---verbose \
---files-from /home/{{ backup_user_name }}/.config/restic/backup.files \
---exclude-caches \
---exclude-file /home/{{ backup_user_name }}/.config/restic/exclude.files
+sudo \
+  --preserve-env=SSH_AUTH_SOCK,RESTIC_REPOSITORY \
+  -u restic \
+  restic backup \
+  --verbose \
+  --files-from /home/{{ backup_user_name }}/.config/restic/backup.files \
+  --exclude-caches \
+  --exclude-file /home/{{ backup_user_name }}/.config/restic/exclude.files
 
 ### Remove old stuff
 echo "Deleting old backups ..."
