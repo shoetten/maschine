@@ -1,8 +1,0 @@
----
-# Reload NGINX
-- name: "reload nginx"
-  service:
-    name: nginx
-    state: reloaded
-  delegate_to: "{{ nginx_hostname }}"
-  become: yes

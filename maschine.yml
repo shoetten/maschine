@@ -2,10 +2,32 @@
 - name: provision maschine
   hosts: localhost
   roles:
-    - { role: common, tags: [ 'setup' ] }
-    - { role: nvm, tags: [ 'node', 'nvm' ] }
-    - { role: plasma, tags: [ 'window-manager' ] }
-    - { role: ssd, tags: [ 'ssd' ] }
+    - role: system
+      tags:
+        - system
+        - setup
+      system_user:
+        name: "{{ user_name }}"
+        id: 1000
+      system_zsh_config_path: "{{ zsh_config_path }}"
+
+    - role: nvm
+      tags:
+        - node
+        - nvm
+      nvm_user_name: "{{ user_name }}"
+      nvm_zsh_config_path: "{{ zsh_config_path }}"
+
+    - role: plasma
+      tags:
+        - window-manager
+
+    - role: ssd
+      tags:
+        - ssd
+
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"
+
+- import_playbook: firewall.yml

@@ -8,8 +8,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 # Shorten prompt path
 zstyle ':prompt:grml:left:items:path' token '%25<..<%~%<< '
 
-# source all files in ~/{{ zsh_config_path }}
-for file in ~/{{ zsh_config_path }}/*; do source $file; done
+# source all files in ~/{{ system_zsh_config_path }}
+for file in ~/{{ system_zsh_config_path }}/*; do source $file; done
 
 # rbenv
 eval "$(rbenv init -)"

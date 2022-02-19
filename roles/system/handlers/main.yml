@@ -4,5 +4,5 @@
   service:
     name: unbound
     state: restarted
-  become: yes
+  become: True
   ignore_errors: yes

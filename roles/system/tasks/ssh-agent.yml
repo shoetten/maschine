@@ -2,20 +2,20 @@
 
 - name: ensure user service directory exist
   file:
-    path: "/home/{{ user.name }}/.config/systemd/user"
+    path: "/home/{{ system_user.name }}/.config/systemd/user"
     state: directory
     mode: 0755
-  become: yes
-  become_user: "{{ user.name }}"
+  become: True
+  become_user: "{{ system_user.name }}"
 
 - name: add user service for ssh-agent
   copy:
     src: "{{ item }}"
-    dest: "/home/{{ user.name }}/{{ item }}"
+    dest: "/home/{{ system_user.name }}/{{ item }}"
   with_items:
     - .config/systemd/user/ssh-agent.service
-  become: yes
-  become_user: "{{ user.name }}"
+  become: True
+  become_user: "{{ system_user.name }}"
 
 - name: enable ssh-agent service
   systemd:
@@ -23,8 +23,8 @@
     state: started
     enabled: yes
     scope: user
-  become: yes
-  become_user: "{{ user.name }}"
+  become: True
+  become_user: "{{ system_user.name }}"
 
 - name: export ssh auth socket env
   copy:

@@ -2,8 +2,8 @@
 # add admin groups
 - name: add admin groups
   group:
-    name: "{{ user.name }}"
-    gid: "{{ user.id }}"
+    name: "{{ system_user.name }}"
+    gid: "{{ system_user.id }}"
 
 - name: add sudo group
   group:
@@ -17,8 +17,8 @@
 
 - name: add admin users
   user:
-    name: "{{ user.name }}"
-    group: "{{ user.name }}"
+    name: "{{ system_user.name }}"
+    group: "{{ system_user.name }}"
     groups:
       - sudo
       - wheel

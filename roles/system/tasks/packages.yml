@@ -2,20 +2,20 @@
 # install packages
 - name: install base packages
   pacman:
-    name: "{{ base_packages }}"
+    name: "{{ system_base_packages }}"
     update_cache: yes
     state: present
 
 - name: install development packages
   pacman:
-    name: "{{ development_packages }}"
+    name: "{{ system_development_packages }}"
     update_cache: yes
     state: present
 
 # install applications
 - name: install applications
   pacman:
-    name: "{{ applications }}"
+    name: "{{ system_applications }}"
     state: present
 
 - name: install pacman-contrib
@@ -38,17 +38,17 @@
 # AUR
 - name: Create AUR directory
   file:
-    path: "/home/{{ user.name }}/{{ aur.dir }}"
+    path: "/home/{{ system_user.name }}/{{ system_aur.dir }}"
     state: directory
-    owner: "{{ user.name }}"
-    group: "{{ user.name }}"
+    owner: "{{ system_user.name }}"
+    group: "{{ system_user.name }}"
   tags:
     - aur
 
 - name: Install AUR base packages
   aur:
-    name: "{{ aur.packages }}"
-    user: "{{ user.name }}"
-    dir: "/home/{{ user.name }}/{{ aur.dir }}"
+    name: "{{ system_aur.packages }}"
+    user: "{{ system_user.name }}"
+    dir: "/home/{{ system_user.name }}/{{ system_aur.dir }}"
   tags:
     - aur

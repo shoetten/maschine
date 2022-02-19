@@ -7,7 +7,7 @@
     mode: 0600
   register: write_sshd_config
   notify: restart sshd
-  become: yes
+  become: True
 
 # write port into local file (development only)
 - name: write port into local file (development only)

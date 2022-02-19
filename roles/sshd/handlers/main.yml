@@ -4,4 +4,4 @@
   service:
     name: "{{ sshd_service }}"
     state: restarted
-  become: yes
+  become: True

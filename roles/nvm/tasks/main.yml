@@ -2,14 +2,14 @@
 - name: Install NVM via arch user repository
   aur:
     name: nvm
-    user: "{{ user.name }}"
-    dir: "/home/{{ user.name }}/{{ aur.dir }}"
+    user: "{{ nvm_user_name }}"
+    dir: "/home/{{ nvm_user_name }}/{{ aur.dir }}"
   tags:
     - aur
 
 - name: add nvm to zsh config
   template:
     src: nvm.zshrc.j2
-    dest: "/home/{{ user.name }}/{{ zsh_config_path }}/nvm.zshrc"
-    owner: "{{ user.name }}"
-    group: "{{ user.name }}"
+    dest: "/home/{{ nvm_user_name }}/{{ nvm_zsh_config_path }}/nvm.zshrc"
+    owner: "{{ nvm_user_name }}"
+    group: "{{ nvm_user_name }}"

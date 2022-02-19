@@ -1,2 +1,84 @@
 ---
-zsh_config_path: ".zsh"
+system_user:
+  name: user
+  id: 1000
+
+system_zsh_config_path: .zsh
+
+system_base_packages:
+  - ansible
+  - arch-wiki-docs
+  - arch-wiki-lite
+  - base-devel
+  - bolt
+  - bluez
+  - fwupd
+  - htop
+  - inetutils
+  - intel-ucode
+  - nmap
+  - pipewire-pulse
+  - wireplumber # pipewire session manager
+  - easyeffects # Audio Effects for Pipewire applications
+  - python-keyring
+  - python-passlib
+  - python-pip
+  - python-secretstorage
+  - python-setuptools
+  - smartmontools
+  - tldr
+  - tmux
+  - tree
+  - zip
+  - unzip
+  - vim
+  - libva-intel-driver
+  - vulkan-intel
+  - vulkan-mesa-layer
+  - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+  - grml-zsh-config
+  - xdg-desktop-portal
+
+system_development_packages:
+  - git
+  - docker
+  - docker-compose
+  - ruby
+  - ruby-bundler
+
+system_aur:
+  dir: .aur
+  packages:
+    - yay
+    - rbenv
+
+system_applications:
+  - libreoffice-fresh
+  - libreoffice-fresh-de
+  - hunspell-en_US
+  - hunspell-de
+  - hyphen-de
+  - librecad
+  - nextcloud-client
+  - mixxx
+  - mumble
+  - pdfarranger
+  - pdfmixtool
+  - gimp
+  - inkscape
+  - krita
+  - firefox
+  - firefox-developer-edition
+  - keepassxc
+  - chromium
+  - code
+  - element-desktop
+  - scribus
+  - veracrypt
+  - vlc
+  - elisa
+  - zeal
+  - skanlite
+  - kdenlive
