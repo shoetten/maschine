@@ -12,7 +12,6 @@ base_packages:
   - bolt
   - bluez
   - fwupd
-  - git
   - htop
   - inetutils
   - intel-ucode
@@ -25,9 +24,6 @@ base_packages:
   - python-pip
   - python-secretstorage
   - python-setuptools
-  - restic
-  - ruby
-  - ruby-bundler
   - smartmontools
   - tldr
   - tmux
@@ -43,6 +39,13 @@ base_packages:
   - zsh-syntax-highlighting
   - grml-zsh-config
   - xdg-desktop-portal
+
+development_packages:
+  - git
+  - docker
+  - docker-compose
+  - ruby
+  - ruby-bundler
 
 aur:
   dir: .aur
@@ -64,6 +67,7 @@ applications:
   - pdfmixtool
   - gimp
   - inkscape
+  - krita
   - firefox
   - firefox-developer-edition
   - keepassxc
@@ -73,9 +77,10 @@ applications:
   - scribus
   - veracrypt
   - vlc
-  - juk
+  - elisa
   - zeal
   - skanlite
+  - kdenlive
 
 # zsh
 zsh_config_path: ".zsh"

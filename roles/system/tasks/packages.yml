@@ -1,8 +1,14 @@
 ---
 # install packages
-- name: install packages
+- name: install base packages
   pacman:
     name: "{{ base_packages }}"
+    update_cache: yes
+    state: present
+
+- name: install development packages
+  pacman:
+    name: "{{ development_packages }}"
     update_cache: yes
     state: present
 

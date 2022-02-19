@@ -19,12 +19,10 @@ kde_applications:
   - filelight
   - gwenview
   - kaccounts-providers
-  - kate
-  - kcalc
   - kdeconnect
-  - kdepim-meta
-  - kdeutils-meta
-  - konsole
+  - kde-pim-meta
+  - kalendar
+  - kde-utilities-meta
   - okular
 
 plasma_aur:
