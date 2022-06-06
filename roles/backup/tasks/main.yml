@@ -5,31 +5,6 @@
     update_cache: True
     state: present
 
-- name: add dedicated restic group
-  ansible.builtin.group:
-    name: restic
-
-- name: add dedicated restic user
-  ansible.builtin.user:
-    name: restic
-    group: restic
-    groups:
-      - "{{ backup_user_name }}"
-    shell: /sbin/nologin
-
-- name: change restic binary permissions, so regular users can't execute it
-  ansible.builtin.file:
-    path: /usr/bin/restic
-    owner: root
-    group: restic
-    mode: 0750
-
-- name: allow restic binary to read everything
-  community.general.capabilities:
-    path: /usr/bin/restic
-    capability: cap_dac_read_search=+ep
-    state: present
-
 - name: add backup binary
   ansible.builtin.template:
     src: ".local/bin/backup.j2"

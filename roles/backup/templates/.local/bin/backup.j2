@@ -2,18 +2,18 @@
 set -e
 
 export RESTIC_REPOSITORY="{{ backup_restic_repository }}"
-notify-send "Restic backup started."
 
-### Give restic user permissions to connect to ssh auth socket
-setfacl -m restic:x $(dirname "$SSH_AUTH_SOCK")
-setfacl -m restic:rwx "$SSH_AUTH_SOCK"
+# notify-send "Creating incremental backup..."
+echo "Creating incremental backup..."
 
-echo "Creating incremental backup ..."
-### Backup new stuff
-sudo \
-  --preserve-env=SSH_AUTH_SOCK,RESTIC_REPOSITORY \
-  -u restic \
-  restic backup \
+### Start backup via restic with extendend temporary capabilities
+sudo -E capsh \
+  --caps="cap_setpcap,cap_setuid,cap_setgid+ep cap_dac_read_search+eip" \
+  --keep=1 \
+  --user="$USER" \
+  --addamb="cap_dac_read_search" \
+  --shell=/usr/bin/restic -- \
+  backup \
   --verbose \
   --files-from /home/{{ backup_user_name }}/.config/restic/backup.files \
   --exclude-caches \
@@ -27,8 +27,5 @@ restic forget \
 --keep-weekly 3 \
 --keep-monthly 6
 
-# restic -r $BACKARCH check
 echo "Don't forget to run \"restic check\" from time to time"
 echo "Backup finished."
-
-notify-send "Restic backup finished."
