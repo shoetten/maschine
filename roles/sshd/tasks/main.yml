@@ -1,3 +1,0 @@
----
-- import_tasks: write_sshd_config.yml
-- import_tasks: configure_motd.yml

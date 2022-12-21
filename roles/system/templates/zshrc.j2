@@ -15,7 +15,6 @@ for file in ~/{{ system_zsh_config_path }}/*; do source $file; done
 eval "$(rbenv init -)"
 
 # Git Workflows
-export PATH="$PATH:$HOME/Development/tools/gitworkflows"
 alias git-autoremove-local-branches="git fetch --prune && git branch -vv | grep 'origin/.*: entfernt]' | awk '{print $1}' | xargs git branch -D"
 
 # Local bin directory

@@ -63,8 +63,6 @@ system_applications:
   - hyphen-de
   - librecad
   - nextcloud-client
-  - mixxx
-  - mumble
   - pdfarranger
   - pdfmixtool
   - gimp
