@@ -1,0 +1,15 @@
+---
+- name: Install fnm via arch user repository
+  aur:
+    name: fnm
+    user: "{{ fnm_user_name }}"
+    dir: "/home/{{ fnm_user_name }}/{{ aur.dir }}"
+  tags:
+    - aur
+
+- name: add fnm to zsh config
+  ansible.builtin.template:
+    src: fnm.zshrc.j2
+    dest: "/home/{{ fnm_user_name }}/{{ fnm_zsh_config_path }}/fnm.zshrc"
+    owner: "{{ fnm_user_name }}"
+    group: "{{ fnm_user_name }}"

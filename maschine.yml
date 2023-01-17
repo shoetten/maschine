@@ -11,12 +11,13 @@
         id: 1000
       system_zsh_config_path: "{{ zsh_config_path }}"
 
-    - role: nvm
+    - role: fnm
       tags:
         - node
+        - fnm
         - nvm
-      nvm_user_name: "{{ user_name }}"
-      nvm_zsh_config_path: "{{ zsh_config_path }}"
+      fnm_user_name: "{{ user_name }}"
+      fnm_zsh_config_path: "{{ zsh_config_path }}"
 
     - role: plasma
       tags:

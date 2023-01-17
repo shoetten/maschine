@@ -1,4 +1,4 @@
 ---
-# used in system & nvm roles
+# used in system & fnm roles
 user_name: user
 zsh_config_path: ".zsh"
