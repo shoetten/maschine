@@ -32,4 +32,6 @@
       prompt: "Enter desired user password"
 
 - import_playbook: firewall.yml
+
 - import_playbook: backup.yml
+  when: backup_enabled

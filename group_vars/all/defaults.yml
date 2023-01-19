@@ -1,4 +1,6 @@
 ---
+backup_enabled: True
+
 # used in system & fnm roles
 user_name: user
 zsh_config_path: ".zsh"
