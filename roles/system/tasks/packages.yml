@@ -1,4 +1,12 @@
 ---
+# enable multilib for 32bit apps
+- name: Enable multilib repository
+  ansible.builtin.blockinfile:
+    path: /etc/pacman.conf
+    block: |
+      [multilib]
+      Include = /etc/pacman.d/mirrorlist
+
 # install packages
 - name: install base packages
   community.general.pacman:
@@ -34,6 +42,18 @@
     path: /etc/pacman.conf
     regexp: '^#?Color'
     line: "Color"
+
+# Mirrorlist updates via reflector
+- name: copy reflector config file
+  ansible.builtin.template:
+    src: "reflector/reflector.conf.j2"
+    dest: "/etc/xdg/reflector/reflector.conf"
+
+- name: Enable reflector service for mirrorlist updates on boot
+  ansible.builtin.service:
+    name: reflector.service
+    state: started
+    enabled: yes
 
 # AUR
 - name: Create AUR directory
