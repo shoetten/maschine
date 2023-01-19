@@ -20,6 +20,20 @@
     update_cache: yes
     state: present
 
+- name: install amd drivers
+  community.general.pacman:
+    name: "{{ system_amd_packages }}"
+    update_cache: yes
+    state: present
+  when: system_platform == "amd"
+
+- name: install intel drivers
+  community.general.pacman:
+    name: "{{ system_amd_packages }}"
+    update_cache: yes
+    state: present
+  when: system_platform == "intel"
+
 # install applications
 - name: install applications
   community.general.pacman:

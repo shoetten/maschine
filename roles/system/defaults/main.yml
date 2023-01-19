@@ -6,6 +6,7 @@ system_user:
 system_zsh_config_path: .zsh
 
 system_base_packages:
+  - linux-lts
   - ansible
   - arch-wiki-docs
   - arch-wiki-lite
@@ -16,7 +17,6 @@ system_base_packages:
   - gocryptfs # as a plasma vault backend with good performance
   - htop
   - inetutils
-  - intel-ucode
   - nmap
   - pipewire-pulse
   - wireplumber # pipewire session manager
@@ -26,6 +26,7 @@ system_base_packages:
   - python-pip
   - python-secretstorage
   - python-setuptools
+  - reflector
   - smartmontools
   - tldr
   - tmux
@@ -33,19 +34,38 @@ system_base_packages:
   - zip
   - unzip
   - vim
-  - libva-intel-driver
-  - vulkan-intel
-  - vulkan-mesa-layer
+  - mesa
+  - lib32-mesa
+  - libva-mesa-driver
+  - lib32-libva-mesa-driver
+  - mesa-vdpau
+  - lib32-mesa-vdpau
+  - vulkan-mesa-layers
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
   - grml-zsh-config
   - xdg-desktop-portal
 
+system_platform: amd
+
+system_intel_packages:
+  - intel-ucode
+  - libva-intel-driver
+  - xf86-video-intel
+  - vulkan-intel
+  - lib32-vulkan-intel
+
+system_amd_packages:
+  - amd-ucode
+  - xf86-video-amdgpu
+  - vulkan-radeon
+  - lib32-vulkan-radeon
+
 system_development_packages:
   - git
   - docker
-  - docker-compose
+  - podman
   - ruby
   - ruby-bundler
 
@@ -78,7 +98,6 @@ system_applications:
   - scribus
   - veracrypt
   - vlc
-  - elisa
   - zeal
   - skanlite
   - kdenlive
