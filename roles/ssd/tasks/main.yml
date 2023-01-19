@@ -9,12 +9,6 @@
   register: hdparm
   ignore_errors: True
 
-- name: Enable trim support in LVM
-  ansible.builtin.lineinfile:
-    path: /etc/lvm/lvm.conf
-    regexp: '^\s*issue_discards ='
-    line: " issue_discards = 1"
-
 - name: Enable and start weekly filesystem TRIM timer
   ansible.builtin.service:
     name: fstrim.timer
