@@ -17,10 +17,35 @@
           protocol: "(tcp udp)"
         - type: "dport_accept"
           filename: "local_dev_accept"
-          dport: [80,3000]
+          dport: [80,443,3000]
+          saddr:
+            - "192.168.0.0/16"
+            - "10.88.0.0/16"
+        - type: "dport_accept"
+          filename: "ausweisapp2_accept"
+          dport: [24727]
+          protocol: "udp"
+          saddr:
+            - "192.168.0.0/16"
+            - "10.88.0.0/16"
+        - type: "dport_accept"
+          filename: "dns_accept"
+          dport: [53]
+          protocol: "(tcp udp)"
+          saddr:
+            - "192.168.0.0/16"
+            - "10.88.0.0/16"
+        - type: "dport_accept"
+          filename: "samba_client_accept"
+          dport: [138]
+          protocol: "udp"
           saddr:
             - "192.168.0.0/16"
             - "10.88.0.0/16"
         - type: "dport_accept"
           dport: [mdns]
           filename: "mdns_accept"
+        - type: "dport_accept"
+          filename: "dhcpv6_client_accept"
+          dport: [546]
+          protocol: "udp"
