@@ -54,6 +54,7 @@ system_aur:
   packages:
     - yay
     - rbenv
+    - informant
 
 system_applications:
   - libreoffice-fresh
