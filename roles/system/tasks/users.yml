@@ -9,6 +9,13 @@
   ansible.builtin.group:
     name: sudo
 
+- name: install zsh
+  community.general.pacman:
+    name:
+      - zsh
+    update_cache: yes
+    state: present
+
 # add admin users
 - name: change root user
   ansible.builtin.user:
