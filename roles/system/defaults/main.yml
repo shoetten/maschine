@@ -13,6 +13,7 @@ system_base_packages:
   - base-devel
   - bolt
   - bluez
+  - bluez-utils
   - fwupd
   - gocryptfs # as a plasma vault backend with good performance
   - htop
