@@ -3,7 +3,7 @@
   aur:
     name: fnm
     user: "{{ fnm_user_name }}"
-    dir: "/home/{{ fnm_user_name }}/{{ aur.dir }}"
+    dir: "/home/{{ fnm_user_name }}/{{ aur_dir }}"
   tags:
     - aur
 

@@ -27,7 +27,7 @@ kde_applications:
 
 plasma_aur:
   aur:
-    dir: .aur
+    dir: "{{ aur_dir }}"
     packages:
       - kde-service-menu-reimage
       - greetd # sddm alternative

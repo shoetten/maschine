@@ -72,7 +72,7 @@ system_development_packages:
   - ruby-bundler
 
 system_aur:
-  dir: .aur
+  dir: "{{ aur_dir }}"
   packages:
     - yay
     - rbenv
