@@ -92,6 +92,7 @@ system_applications:
   - pdfarranger
   - pdfmixtool
   - gimp
+  - gnome-disk-utility
   - inkscape
   - krita
   - firefox

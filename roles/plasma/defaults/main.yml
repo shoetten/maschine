@@ -1,6 +1,5 @@
 ---
 plasma_packages:
-  - breeze-grub
   - jhead
   - kde-gtk-config
   - kdeplasma-addons
