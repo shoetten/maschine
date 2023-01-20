@@ -8,11 +8,14 @@
       Include = /etc/pacman.d/mirrorlist
 
 # install base packages
-- name: make sure pulseaudio is not installed
+- name: make sure conflicting packages are not installed
   community.general.pacman:
-    name: pulseaudio
+    name:
+      - pulseaudio
+      - pipewire-media-session
     update_cache: yes
     state: absent
+    force: yes
 
 - name: install base packages
   community.general.pacman:

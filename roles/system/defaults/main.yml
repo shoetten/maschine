@@ -70,7 +70,6 @@ system_development_packages:
   - podman
   - ruby
   - ruby-bundler
-  - zeal
 
 system_aur:
   dir: .aur
@@ -80,6 +79,7 @@ system_aur:
     - informant
     - code-marketplace
     - code-features
+    - zeal
 
 system_applications:
   - libreoffice-fresh
