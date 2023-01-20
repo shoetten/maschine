@@ -11,6 +11,8 @@ After installing `ansible`, install and update the submodules:
 
     $ git submodule init && git submodule update
 
+Override any variables you might want to change in `group_vars/all/local.yml`, e.g. `system_platform: intel`.
+
 Then run the playbook as root.
 
     # ansible-playbook maschine.yml

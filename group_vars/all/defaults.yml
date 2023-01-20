@@ -1,5 +1,6 @@
 ---
 backup_enabled: True
+system_platform: amd # intel or amd
 
 # used in system & fnm roles
 user_name: user
