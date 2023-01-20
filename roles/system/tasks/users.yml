@@ -50,7 +50,7 @@
     regexp: '^#?\w+deny'
     line: "deny = 6"
 
-- name: Ensure user bin directory exist
+- name: Ensure user bin directory exists
   ansible.builtin.file:
     path: "/home/{{ system_user.name }}/.local/bin"
     state: directory

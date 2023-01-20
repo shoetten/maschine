@@ -13,6 +13,14 @@
     group: "{{ backup_user_name }}"
     mode: 0750
 
+- name: ensure restic config directory exists
+  ansible.builtin.file:
+    path: "/home/{{ backup_user_name }}/.config/restic"
+    state: directory
+    mode: 0750
+  become: True
+  become_user: "{{ backup_user_name }}"
+
 - name: add backup configs
   ansible.builtin.template:
     src: "{{ item }}.j2"
