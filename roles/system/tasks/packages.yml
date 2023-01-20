@@ -8,6 +8,12 @@
       Include = /etc/pacman.d/mirrorlist
 
 # install base packages
+- name: make sure pulseaudio is not installed
+  community.general.pacman:
+    name: pulseaudio
+    update_cache: yes
+    state: absent
+
 - name: install base packages
   community.general.pacman:
     name: "{{ system_base_packages }}"
