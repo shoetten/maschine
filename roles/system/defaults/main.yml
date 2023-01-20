@@ -79,7 +79,6 @@ system_aur:
     - informant
     - code-marketplace
     - code-features
-    - zeal
 
 system_applications:
   - libreoffice-fresh
