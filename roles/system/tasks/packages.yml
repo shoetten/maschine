@@ -7,16 +7,10 @@
       [multilib]
       Include = /etc/pacman.d/mirrorlist
 
-# install packages
+# install base packages
 - name: install base packages
   community.general.pacman:
     name: "{{ system_base_packages }}"
-    update_cache: yes
-    state: present
-
-- name: install development packages
-  community.general.pacman:
-    name: "{{ system_development_packages }}"
     update_cache: yes
     state: present
 
@@ -33,6 +27,13 @@
     update_cache: yes
     state: present
   when: system_platform == "intel"
+
+# dev packages
+- name: install development packages
+  community.general.pacman:
+    name: "{{ system_development_packages }}"
+    update_cache: yes
+    state: present
 
 # install applications
 - name: install applications
@@ -79,7 +80,7 @@
   tags:
     - aur
 
-- name: Install AUR base packages
+- name: Install AUR packages
   aur:
     name: "{{ system_aur.packages }}"
     user: "{{ system_user.name }}"

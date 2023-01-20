@@ -64,10 +64,13 @@ system_amd_packages:
 
 system_development_packages:
   - git
+  - code
   - docker
+  - firefox-developer-edition
   - podman
   - ruby
   - ruby-bundler
+  - zeal
 
 system_aur:
   dir: .aur
@@ -75,6 +78,8 @@ system_aur:
     - yay
     - rbenv
     - informant
+    - code-marketplace
+    - code-features
 
 system_applications:
   - libreoffice-fresh
@@ -90,14 +95,11 @@ system_applications:
   - inkscape
   - krita
   - firefox
-  - firefox-developer-edition
   - keepassxc
   - chromium
-  - code
   - element-desktop
   - scribus
   - veracrypt
   - vlc
-  - zeal
   - skanlite
   - kdenlive
