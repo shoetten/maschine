@@ -1,5 +1,0 @@
----
-- name: enable sddm
-  ansible.builtin.service:
-    name:  sddm
-    enabled: yes

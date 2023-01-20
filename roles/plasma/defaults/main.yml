@@ -31,3 +31,4 @@ plasma_aur:
     dir: .aur
     packages:
       - kde-service-menu-reimage
+      - greetd # sddm alternative

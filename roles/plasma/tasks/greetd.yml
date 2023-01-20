@@ -1,0 +1,16 @@
+---
+- name: Change greetd config to start plasma wayland
+  ansible.builtin.lineinfile:
+    path: /etc/greetd/config.toml
+    regexp: '^command = "agreety --cmd'
+    line: 'command = "agreety --cmd startplasma-wayland"'
+
+- name: Copy greetd pam config file
+  ansible.builtin.template:
+    src: "pam.d/greetd.j2"
+    dest: "/etc/pam.d/greetd"
+
+- name: enable greetd
+  ansible.builtin.service:
+    name:  greetd
+    enabled: True

@@ -5,8 +5,6 @@
     name: "{{ plasma_packages }}"
     update_cache: yes
     state: present
-  notify:
-    - enable sddm
 
 - name: install kde applications
   community.general.pacman:
