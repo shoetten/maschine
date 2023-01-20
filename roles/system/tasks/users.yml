@@ -43,3 +43,9 @@
     group: sudo
     commands: ALL
     nopassword: False
+
+- name: Increase failed login attempts
+  ansible.builtin.lineinfile:
+    path: /etc/security/faillock.conf
+    regexp: '^#?\w+deny'
+    line: "deny = 6"
