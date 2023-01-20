@@ -49,3 +49,11 @@
     path: /etc/security/faillock.conf
     regexp: '^#?\w+deny'
     line: "deny = 6"
+
+- name: Ensure user bin directory exist
+  ansible.builtin.file:
+    path: "/home/{{ system_user.name }}/.local/bin"
+    state: directory
+    mode: 0750
+  become: True
+  become_user: "{{ system_user.name }}"
