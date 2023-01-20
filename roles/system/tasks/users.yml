@@ -35,3 +35,11 @@
     shell: /bin/zsh
     password: "{{ user_password | password_hash('sha512') }}"
     update_password: on_create
+
+- name: Allow users in sudo group root access
+  community.general.sudoers:
+    name: allow-sudo-group
+    state: present
+    group: sudo
+    commands: ALL
+    nopassword: False
