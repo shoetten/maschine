@@ -15,5 +15,5 @@
 - name: Install AUR addon packages
   aur:
     name: "{{ plasma_aur.packages }}"
-    ansible.builtin.user: "{{ user.name }}"
-    dir: "/home/{{ user.name }}/{{ plasma_aur.dir }}"
+    user: "{{ user_name }}"
+    dir: "/home/{{ user_name }}/{{ plasma_aur.dir }}"
