@@ -29,6 +29,7 @@ system_base_packages:
   - python-setuptools
   - reflector
   - smartmontools
+  - openssh
   - usbutils
   - tldr
   - tmux
