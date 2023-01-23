@@ -9,10 +9,11 @@
   ansible.builtin.group:
     name: sudo
 
-- name: install zsh
+- name: install zsh & sudo
   community.general.pacman:
     name:
       - zsh
+      - sudo
     update_cache: yes
     state: present
 
