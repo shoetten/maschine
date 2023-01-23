@@ -18,6 +18,7 @@ system_base_packages:
   - gocryptfs # as a plasma vault backend with good performance
   - htop
   - inetutils
+  - bind
   - nmap
   - pipewire-pulse
   - wireplumber # pipewire session manager
