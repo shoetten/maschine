@@ -75,7 +75,7 @@
 
 - name: Enable reflector service for mirrorlist updates on boot
   ansible.builtin.service:
-    name: reflector.service
+    name: reflector.timer
     state: started
     enabled: yes
 
