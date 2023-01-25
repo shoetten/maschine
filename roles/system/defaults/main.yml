@@ -83,7 +83,6 @@ system_aur:
     - ruby-build
     - code-marketplace
     - code-features
-    - informant
 
 system_applications:
   - libreoffice-fresh

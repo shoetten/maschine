@@ -5,3 +5,4 @@
 - import_tasks: ssh-agent.yml
 - import_tasks: network-manager.yml
 - import_tasks: bluetooth.yml
+- import_tasks: informant.yml
