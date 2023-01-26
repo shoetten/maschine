@@ -70,6 +70,7 @@ system_development_packages:
   - git
   - code
   - docker
+  - docker-compose
   - firefox-developer-edition
   - podman
   - ruby
