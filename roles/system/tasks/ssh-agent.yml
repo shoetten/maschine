@@ -1,5 +1,4 @@
 ---
-
 - name: ensure user service directory exist
   ansible.builtin.file:
     path: "/home/{{ system_user.name }}/.config/systemd/user"

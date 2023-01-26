@@ -1,0 +1,14 @@
+---
+- name: export xdg data dirs env
+  ansible.builtin.copy:
+    src: etc/profile.d/xdg-data-dirs.sh
+    dest: /etc/profile.d/xdg-data-dirs.sh
+    mode: '0644'
+
+- name: Install junction via aur
+  aur:
+    name: "junction"
+    user: "{{ system_user.name }}"
+    dir: "/home/{{ system_user.name }}/{{ system_aur.dir }}"
+  tags:
+    - aur
