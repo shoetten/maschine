@@ -6,6 +6,7 @@ system_user:
 system_zsh_config_path: .zsh
 
 system_base_packages:
+  - linux
   - linux-lts
   - ansible
   - arch-wiki-docs
@@ -50,6 +51,7 @@ system_base_packages:
   - zsh-syntax-highlighting
   - grml-zsh-config
   - xdg-desktop-portal
+  - noto-fonts-emoji
 
 system_platform: amd
 
