@@ -6,7 +6,10 @@ system_user:
 system_zsh_config_path: .zsh
 
 system_base_packages:
+  - linux
+  - linux-headers
   - linux-lts
+  - linux-lts-headers
   - ansible
   - arch-wiki-docs
   - arch-wiki-lite
