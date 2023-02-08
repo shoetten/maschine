@@ -14,16 +14,17 @@ plasma_packages:
 
 kde_applications:
   - dolphin
+  - elisa
   - filelight
   - gwenview
-  - elisa
-  - kate
   - kaccounts-providers
-  - kdeconnect
-  - kde-pim-meta
   - kalendar
+  - kate
+  - kde-pim-meta
   - kde-utilities-meta
+  - kdeconnect
   - okular
+  - spectacle
 
 plasma_aur:
   dir: "{{ aur_dir }}"
