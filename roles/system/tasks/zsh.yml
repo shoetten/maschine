@@ -28,6 +28,13 @@
     owner: "{{ system_user.name }}"
     group: "{{ system_user.name }}"
 
+- name: Ensure zsh user functions directory exists
+  ansible.builtin.file:
+    path: "/home/{{ system_user.name }}/.zfunc"
+    state: directory
+    owner: "{{ system_user.name }}"
+    group: "{{ system_user.name }}"
+
 - name: Copy all zsh root config template files
   ansible.builtin.template:
     src: "{{ item }}"

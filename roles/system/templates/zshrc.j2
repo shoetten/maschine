@@ -8,11 +8,17 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 # Shorten prompt path
 zstyle ':prompt:grml:left:items:path' token '%25<..<%~%<< '
 
+# rbenv
+eval "$(rbenv init -)"
+
 # source all files in ~/{{ system_zsh_config_path }}
 for file in ~/{{ system_zsh_config_path }}/*; do source $file; done
 
-# rbenv
-eval "$(rbenv init -)"
+# and for shell completion functions
+fpath+=~/.zfunc
+
+autoload -Uz compinit
+compinit -u
 
 # Git Workflows
 alias git-autoremove-local-branches="git fetch --prune && git branch -vv | grep 'origin/.*: entfernt]' | awk '{print $1}' | xargs git branch -D"
