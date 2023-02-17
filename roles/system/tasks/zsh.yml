@@ -35,14 +35,6 @@
     owner: "{{ system_user.name }}"
     group: "{{ system_user.name }}"
 
-- name: Copy all zsh root config template files
-  ansible.builtin.template:
-    src: "{{ item }}"
-    dest: "/root/{{ system_zsh_config_path }}/{{ item | basename | regex_replace('\\.j2$', '') }}"
-    owner: root
-    group: root
-  with_fileglob: "../templates/zsh/*.j2"
-
 - name: Copy all zsh user config template files
   ansible.builtin.template:
     src: "{{ item }}"
