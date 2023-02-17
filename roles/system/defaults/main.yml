@@ -79,6 +79,9 @@ system_development_packages:
   - podman
   - ruby
   - ruby-bundler
+  - rustup
+  - yarn
+  - deno
 
 system_aur:
   dir: "{{ aur_dir }}"
