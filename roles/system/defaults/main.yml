@@ -7,7 +7,9 @@ system_zsh_config_path: .zsh
 
 system_base_packages:
   - linux
+  - linux-headers
   - linux-lts
+  - linux-lts-headers
   - ansible
   - arch-wiki-docs
   - arch-wiki-lite
@@ -77,6 +79,9 @@ system_development_packages:
   - podman
   - ruby
   - ruby-bundler
+  - rustup
+  - yarn
+  - deno
 
 system_aur:
   dir: "{{ aur_dir }}"
