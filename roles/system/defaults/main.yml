@@ -77,6 +77,7 @@ system_development_packages:
   - docker-compose
   - firefox-developer-edition
   - podman
+  - podman-compose
   - ruby
   - ruby-bundler
   - rustup
