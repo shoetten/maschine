@@ -24,6 +24,7 @@ system_base_packages:
   - bind
   - nmap
   - pipewire-pulse
+  - pipewire-jack
   - wireplumber # pipewire session manager
   - easyeffects # Audio Effects for Pipewire applications
   - python-keyring
