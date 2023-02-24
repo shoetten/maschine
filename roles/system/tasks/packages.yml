@@ -67,6 +67,12 @@
     regexp: '^#?Color'
     line: "Color"
 
+- name: Enable parallel downloads in pacman
+  ansible.builtin.lineinfile:
+    path: /etc/pacman.conf
+    regexp: '^#?ParallelDownloads'
+    line: "ParallelDownloads = 5"
+
 # Mirrorlist updates via reflector
 - name: copy reflector config file
   ansible.builtin.template:
