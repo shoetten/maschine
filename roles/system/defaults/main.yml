@@ -17,6 +17,7 @@ system_base_packages:
   - bolt
   - bluez
   - bluez-utils
+  - exfatprogs
   - fwupd
   - gocryptfs # as a plasma vault backend with good performance
   - htop
