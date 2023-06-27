@@ -48,12 +48,24 @@ system_base_packages:
   - mesa-vdpau
   - lib32-mesa-vdpau
   - vulkan-mesa-layers
+  - wget
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
   - grml-zsh-config
   - xdg-desktop-portal
   - noto-fonts-emoji
+
+system_printing_packages:
+  - system-config-printer
+  - cups
+  - cups-pdf
+  - foomatic-db-engine
+  - foomatic-db-ppds
+  - foomatic-db-nonfree-ppds
+  - gutenprint
+  - foomatic-db-gutenprint-ppds
+  - hplip
 
 system_platform: amd
 

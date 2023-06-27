@@ -1,0 +1,12 @@
+---
+- name: install printing packages
+  community.general.pacman:
+    name: "{{ system_printing_packages }}"
+    update_cache: yes
+    state: present
+
+- name: enable cups service
+  ansible.builtin.systemd:
+    name: cups
+    state: started
+    enabled: yes
