@@ -10,6 +10,7 @@ plasma_packages:
   - plasma-wayland-session
   - qt5-imageformats
   - xdg-desktop-portal-kde
+  - xdg-desktop-portal-gnome # required when using GTK_USE_PORTAL=1
   - xorg-server
 
 kde_applications:

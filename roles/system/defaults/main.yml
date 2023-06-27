@@ -17,6 +17,7 @@ system_base_packages:
   - bolt
   - bluez
   - bluez-utils
+  - exfatprogs
   - fwupd
   - gocryptfs # as a plasma vault backend with good performance
   - htop
@@ -24,6 +25,7 @@ system_base_packages:
   - bind
   - nmap
   - pipewire-pulse
+  - pipewire-jack
   - wireplumber # pipewire session manager
   - easyeffects # Audio Effects for Pipewire applications
   - python-keyring
@@ -55,6 +57,7 @@ system_base_packages:
   - grml-zsh-config
   - xdg-desktop-portal
   - noto-fonts-emoji
+  - wireguard-tools
 
 system_printing_packages:
   - system-config-printer

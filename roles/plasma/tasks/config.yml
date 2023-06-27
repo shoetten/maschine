@@ -1,0 +1,6 @@
+---
+- name: ensure consistent file dialog for gtk apps under plasma
+  ansible.builtin.copy:
+    src: etc/profile.d/gtk-file-dialog-portal.sh
+    dest: /etc/profile.d/gtk-file-dialog-portal.sh
+    mode: '0644'
