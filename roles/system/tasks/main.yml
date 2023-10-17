@@ -3,6 +3,7 @@
 - import_tasks: packages.yml
 - import_tasks: zsh.yml
 - import_tasks: ssh-agent.yml
+- import_tasks: firefox-wayland.yml
 - import_tasks: network-manager.yml
 - import_tasks: bluetooth.yml
 - import_tasks: junction.yml
