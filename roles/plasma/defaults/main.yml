@@ -19,11 +19,11 @@ kde_applications:
   - filelight
   - gwenview
   - kaccounts-providers
-  - kalendar
   - kate
   - kde-pim-meta
   - kde-utilities-meta
   - kdeconnect
+  - merkuro
   - okular
   - spectacle
 
