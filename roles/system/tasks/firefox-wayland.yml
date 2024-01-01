@@ -1,6 +1,0 @@
----
-- name: export MOZ_ENABLE_WAYLAND env
-  ansible.builtin.copy:
-    src: etc/profile.d/firefox-wayland.sh
-    dest: /etc/profile.d/firefox-wayland.sh
-    mode: '0644'
