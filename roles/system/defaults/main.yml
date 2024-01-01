@@ -18,6 +18,7 @@ system_base_packages:
   - bluez
   - bluez-utils
   - exfatprogs
+  - firejail
   - fwupd
   - gocryptfs # as a plasma vault backend with good performance
   - htop
