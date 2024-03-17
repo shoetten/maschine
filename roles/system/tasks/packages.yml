@@ -102,3 +102,10 @@
     dir: "/home/{{ system_user.name }}/{{ system_aur.dir }}"
   tags:
     - aur
+
+# electron wayland
+- name: Enable wayland for electron >=28
+  ansible.builtin.copy:
+    src: etc/profile.d/electron-wayland.sh
+    dest: /etc/profile.d/electron-wayland.sh
+    mode: '0644'
