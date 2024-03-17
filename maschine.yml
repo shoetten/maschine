@@ -1,6 +1,7 @@
 ---
-- name: provision maschine
+- name: Provision maschine
   hosts: localhost
+  become: true
   roles:
     - role: system
       tags:
