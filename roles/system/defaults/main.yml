@@ -55,6 +55,7 @@ system_base_packages:
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
+  - zsh-completions
   - grml-zsh-config
   - xdg-desktop-portal
   - noto-fonts-emoji
