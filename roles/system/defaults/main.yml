@@ -29,6 +29,7 @@ system_base_packages:
   - pipewire-jack
   - wireplumber # pipewire session manager
   - easyeffects # Audio Effects for Pipewire applications
+  - power-profiles-daemon # mange power profiles via dbus
   - python-keyring
   - python-passlib
   - python-pip
