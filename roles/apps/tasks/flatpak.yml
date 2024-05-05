@@ -1,0 +1,12 @@
+---
+- name: Install flatpak
+  community.general.pacman:
+    name: "flatpak"
+    update_cache: true
+    state: present
+
+- name: Add the flathub flatpak repository remote to the user installation
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo

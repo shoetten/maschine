@@ -1,0 +1,4 @@
+---
+apps_flatpak:
+  - org.gimp.GIMP
+  - org.inkscape.Inkscape

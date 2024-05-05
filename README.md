@@ -13,12 +13,16 @@ After installing `ansible`, install and update the submodules:
 
 Override any variables you might want to change in `group_vars/all/local.yml`, e.g. `system_platform: intel`.
 
-Then run the playbook as root.
+Then run the playbook as `root`:
 
-    # ansible-playbook maschine.yml
+    ansible-playbook maschine.yml
 
 When run, Ansible will prompt for the user password. This only needs to be provided on the first run, when the user is being created.
 On later runs, providing any password -- whether it is the current user password or a new one -- will have no effect.
+
+Or with your own user on later runs, via:
+
+    ansible-playbook --ask-become-pass maschine.yml
 
 ## Shell
 

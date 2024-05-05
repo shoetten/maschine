@@ -1,5 +1,6 @@
 ---
 plasma_packages:
+  - flatpak-kcm
   - jhead
   - kde-gtk-config
   - kdeplasma-addons
@@ -9,8 +10,8 @@ plasma_packages:
   - plasma-thunderbolt
   - plasma-wayland-session
   - qt5-imageformats
-  - xdg-desktop-portal-kde
   - xdg-desktop-portal-gnome # required when using GTK_USE_PORTAL=1
+  - xdg-desktop-portal-kde
   - xorg-server
 
 kde_applications:

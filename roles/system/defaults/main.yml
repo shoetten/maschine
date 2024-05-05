@@ -22,6 +22,9 @@ system_base_packages:
   - fwupd
   - gocryptfs # as a plasma vault backend with good performance
   - htop
+  - hunspell-en_US
+  - hunspell-de
+  - hyphen-de
   - inetutils
   - bind
   - nmap
@@ -111,19 +114,15 @@ system_aur:
     - code-marketplace
     - code-features
 
+# apps not installed via flatpak
 system_applications:
   - libreoffice-fresh
   - libreoffice-fresh-de
-  - hunspell-en_US
-  - hunspell-de
-  - hyphen-de
   - librecad
   - nextcloud-client
   - pdfarranger
   - pdfmixtool
-  - gimp
   - gnome-disk-utility
-  - inkscape
   - krita
   - firefox
   - keepassxc

@@ -1,0 +1,4 @@
+---
+- name: Install multiple flatpak applications
+  community.general.flatpak:
+    name: "{{ apps_flatpak }}"
