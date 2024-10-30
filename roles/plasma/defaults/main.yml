@@ -1,5 +1,6 @@
 ---
 plasma_packages:
+  - greetd # sddm alternative
   - flatpak-kcm
   - jhead
   - kde-gtk-config
@@ -32,4 +33,3 @@ plasma_aur:
   dir: "{{ aur_dir }}"
   packages:
     - kf6-servicemenus-reimage
-    - greetd # sddm alternative
