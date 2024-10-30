@@ -104,6 +104,7 @@ system_development_packages:
   - rustup
   - yarn
   - deno
+  - jq
 
 system_aur:
   dir: "{{ aur_dir }}"
