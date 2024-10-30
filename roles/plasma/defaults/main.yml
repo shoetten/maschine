@@ -1,6 +1,7 @@
 ---
 plasma_packages:
   - greetd # sddm alternative
+  - greetd-tuigreet # tui greeter for greetd
   - flatpak-kcm
   - jhead
   - kde-gtk-config
